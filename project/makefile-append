@@ -1,0 +1,7 @@
+
+test:
+  #clang static analyzer
+  #OCLint static analyzer
+  #
+  #unit tests
+  #functional tests (incl almost full deploy test)
