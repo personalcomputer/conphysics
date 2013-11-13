@@ -3,16 +3,6 @@
 #This file is simply to test development environment and deployment schemes and is not what I believe to be a best practice, although hopefully I will learn and get closer to a better method.
 #It should probably not be ran blindly, but I expect it to be ran blindly.
 
-
-packages="git build-essential wget python xorg-dev libglu1-mesa-dev"
-
-
-echo -e "\e[36;01mGetting from package manager: \e[00;00m"$packages
-#Only works on Ubuntu. Translate this into your OS.
-sudo apt-get install $packages
-
-
-
 echo -e "\e[36;01mGetting additional dependencies.\e[00;00m"
 wget https://raw.github.com/personalcomputer/supermake/master/supermake.py
 
