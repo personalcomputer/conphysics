@@ -11,3 +11,6 @@ git clone --depth=1 https://github.com/glfw/glfw.git glfw
 cd glfw
 cmake . -DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF -DGLFW_INSTALL=ON -DCMAKE_INSTALL_PREFIX=$(pwd)
 make install
+cd ..
+
+git clone --depth=1 https://github.com/g-truc/glm.git glm
