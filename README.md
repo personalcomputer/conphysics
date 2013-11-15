@@ -9,7 +9,7 @@ I decided to create an experimental development/build/deployment process to lear
 
 #### Fast Install & Run:
 ```bash
-sudo apt-get install git build-essential wget python xorg-dev libglu1-mesa-dev &&
+sudo apt-get install git build-essential wget python xorg-dev libglu1-mesa-dev libarmadillo-dev &&
 git clone https://github.com/personalcomputer/conphysics.git conphysics && cd conphysics/project && ./get-extra-deps-crossplatform.sh && ./compile.sh && cd .. && ./conphysics
 ```
 
