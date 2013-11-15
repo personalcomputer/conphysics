@@ -1,0 +1,9 @@
+{
+  "interaction": {
+    "agents": ["sand", ""],
+    "catalyst-temp-min": 1700,
+    "products": {
+      "glass-liquid": 1
+    }
+  }
+}

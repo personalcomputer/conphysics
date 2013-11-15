@@ -1,0 +1,7 @@
+{
+  "interaction": {
+    "agents": ["sand", "sand"],
+    "active-bond-strength": 100,
+    "passive-bond-strength": 0.2
+  }
+}
