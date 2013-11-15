@@ -18,7 +18,6 @@ class FatalException : public Exception
 {
   public:
   FatalException(const std::string& title, const std::string& description="") : Exception(title, description) {}
-  virtual std::string report() const;
 };
 
 class GraphicsInitException : public FatalException
@@ -26,3 +25,17 @@ class GraphicsInitException : public FatalException
   public:
   inline GraphicsInitException(const std::string& description=""): FatalException("GraphicsInitException", description) {}
 };
+
+class GLFWException : public FatalException
+{
+  public:
+  inline GLFWException(const std::string& description=""): FatalException("GLFWException", description) {}
+};
+
+class IncompatibleResolutionException : public Exception
+{
+  public:
+  inline IncompatibleResolutionException(const std::string& description=""): Exception("IncompatibleResolutionException", description) {}
+};
+
+

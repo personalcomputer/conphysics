@@ -15,8 +15,3 @@ const char* Exception::what() const throw()
 {
   return report().c_str();
 }
-
-std::string FatalException::report() const
-{
-  return title + " (FATAL): " + description;
-}
