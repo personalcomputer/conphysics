@@ -1,3 +1,5 @@
+#include <cstring>
+
 #include "Exception.h"
 
 #include "GLFWPixelDisplay.h"
@@ -6,7 +8,7 @@ GLFWPixelDisplay::GLFWPixelDisplay(GLFWwindow* const window, const glm::ivec2 re
   window(window),
   resolution(resolution),
   scale(1),
-  pixels(NULL)
+  pixels(new GLubyte[resolution.x*resolution.y*3])
 {
   glfwMakeContextCurrent(window);
   int width, height;
@@ -16,12 +18,7 @@ GLFWPixelDisplay::GLFWPixelDisplay(GLFWwindow* const window, const glm::ivec2 re
   assert(resolution.x == width);
   assert(resolution.y == height);
 
-  pixels = (GLubyte*)malloc(resolution.x*resolution.y*3);
-}
-
-GLFWPixelDisplay::~GLFWPixelDisplay()
-{
-  free(pixels);
+  memset(pixels.get(), 0, resolution.x*resolution.y*3);
 }
 
 void GLFWPixelDisplay::setScale(int scale)
@@ -31,7 +28,7 @@ void GLFWPixelDisplay::setScale(int scale)
   this->scale = scale;
 }
 
-glm::ivec2 GLFWPixelDisplay::getScaledResolution() const
+glm::ivec2 GLFWPixelDisplay::getResolution() const
 {
   return resolution/scale;
 }
@@ -40,7 +37,7 @@ void GLFWPixelDisplay::refresh()
 {
   glClear(GL_COLOR_BUFFER_BIT);
 
-  glDrawPixels(resolution.x, resolution.y, GL_RGB, GL_UNSIGNED_BYTE, pixels);
+  glDrawPixels(resolution.x, resolution.y, GL_RGB, GL_UNSIGNED_BYTE, pixels.get());
 
   glfwSwapBuffers(window);
 }

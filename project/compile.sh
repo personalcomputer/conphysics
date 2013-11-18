@@ -5,10 +5,10 @@
 
 if [ $1 == 'debug' ]
 then
-  python supermake.py --src=../src --binary=../conphysics --makefile-only --warn --prefix=debug --debug --custom="-I../lib/glfw/include -I../lib/glm -L../lib/glfw/lib -lglfw3 -lGL -lXrandr -lXi -lX11"
-  cat makefile-append >> debugmakefile
-  make -f debugmakefile
+  python supermake.py --src=../src --binary=../conphysics --makefile-only --warn --prefix=debug --debug --custom="-std=gnu++0x -I../lib/glfw/include -I../lib/glm -L../lib/glfw/lib -lglfw3 -lGL -lXrandr -lXi -lX11"
+  cat makefile-append >> debugmakefile &&
+  make -f debugmakefile &&
   make -f debugmakefile test
 else
-  python supermake.py --src=../src --binary=../conphysics --no-run --optimize --custom="-I../lib/glfw/include -I../lib/glm -L../lib/glfw/lib -lglfw3 -lGL -lXrandr -lXi -lX11"
+  python supermake.py --src=../src --binary=../conphysics --no-run --optimize --custom="-std=gnu++0x -I../lib/glfw/include -I../lib/glm -L../lib/glfw/lib -lglfw3 -lGL -lXrandr -lXi -lX11"
 fi
