@@ -8,11 +8,13 @@ This project started after watching problems with traditional 'Falling Sand Game
 
 How could one resist trying that? I created an implementation of the most core routines to create this model, the mass redistribution code based on velocity. This by itself should allow simulating falling sand in a  that is already quite dispersed when initially dropped (as in, not clumped together) in a vacuum.
 
-Upon dropping one pixel of the sand near the top of the scene, the following result is obtained after a few iterations and an arbitrary timestep:
+Upon dropping one pixel of the sand near the top of the scene (seen below as the gray dots), the following result is obtained after a few iterations:
 
 ![Illustration](http://i.imgur.com/40UUuoh.png "Illustration")
 
-What we see here is artificial 'dispersion'. Awesome, that's what it should look like! One problem though, I never wrote the dispersion code. What you're seeing is inured entirely by the quantization error. I could figure out no modification to the core principals of the idea that would fix this error without radically altering how the approximation works, and I thus declare the test to have concluded and that I was unable to recreate most of physics using a simple approximation. Nobody was surprised, but it was an interesting statistical modeling experiment.
+What we see here is artificial 'dispersion' in the falling sand. Awesome, that's what it should look like, right?! One problem there - I never wrote the dispersion code. What you're seeing is incurred entirely by the quantization error.
+
+I could figure out no modification to the core principals of the idea that would fix this error without radically altering how the approximation works, and I thus declare the test to have concluded and that I was unable to recreate physics using a few simple approximations. Nobody was surprised, but it was an interesting statistical modeling experiment.
 
 ### Install
 I decided to create an experimental development/build/deployment process to learn more about making easy to use C++ code.
